@@ -1,8 +1,12 @@
-import { KeyboardAvoidingView, Platform } from 'react-native'
-import './index.scss'
+import { KeyboardAvoidingView, Platform } from 'react-native';
+import './index.scss';
 
-export const KeyboardAvoiding = ({ children, isForm, enabled = isForm ?? true }) => {
-  return enabled ?
+export const KeyboardAvoiding = ({
+  children,
+  isForm,
+  enabled = isForm ?? true
+}) => {
+  return enabled ? (
     <KeyboardAvoidingView
       className='KeyboardAvoiding'
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -10,5 +14,7 @@ export const KeyboardAvoiding = ({ children, isForm, enabled = isForm ?? true })
     >
       {children}
     </KeyboardAvoidingView>
-    : <>{children}</>
-}
+  ) : (
+    <>{children}</>
+  );
+};

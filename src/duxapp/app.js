@@ -1,7 +1,7 @@
-import { route } from './utils'
+import { route } from './utils';
 
 export default {
   show: (...arg) => {
-    route.showInit(...arg)
+    route.showInit(...arg);
   }
-}
+};

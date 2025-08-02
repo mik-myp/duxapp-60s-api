@@ -1,1 +1,1 @@
-export { previewMedia } from '@tarojs/taro'
+export { previewMedia } from '@tarojs/taro';

@@ -41,7 +41,7 @@ export default {
     color: '#000', // 仅支持rgb hex值，请勿使用纯单词 设置为数组将显示一个渐变按钮
     bgColor: undefined,
     showWechat: false, // 微信公众号是否显示header
-    showWap: true, // h5是否显示header
+    showWap: true // h5是否显示header
   },
 
   loading: {
@@ -52,4 +52,4 @@ export default {
   topView: {
     weappRem: false
   }
-}
+};

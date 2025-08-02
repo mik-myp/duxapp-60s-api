@@ -11,4 +11,4 @@ export const loading: (
    * 是否遮住页面，让点击无法操作
    */
   mask?: boolean
-) => (() => void)
+) => () => void;

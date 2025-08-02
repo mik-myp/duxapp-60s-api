@@ -1,3 +1,3 @@
 export const KeyboardDismiss = ({ children }) => {
-  return children
-}
+  return children;
+};

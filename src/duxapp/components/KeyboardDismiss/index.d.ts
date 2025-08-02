@@ -1,5 +1,5 @@
-import { ViewProps } from '@tarojs/components'
-import { ComponentType, ReactNode } from 'react'
+import { ViewProps } from '@tarojs/components';
+import { ComponentType, ReactNode } from 'react';
 
 interface KeyboardDismissProps extends ViewProps {
   /**
@@ -14,7 +14,7 @@ interface KeyboardDismissProps extends ViewProps {
    * 当设置为false，效果和 keyboardShouldPersistTaps='handled' 是一样的
    * duxapp 模块提供的 ScrollView 默认设置了 keyboardShouldPersistTaps='handled'
    */
-  buddle?: boolean
+  buddle?: boolean;
 }
 
 /**
@@ -25,4 +25,4 @@ interface KeyboardDismissProps extends ViewProps {
  * 什么时候使用这个组件？
  * 在非ScrollView里面使用了输入框组件的情况下，在外部包裹这个组件，可以让点击空白区域的时候自动收起键盘
  */
-export const KeyboardDismiss: ComponentType<KeyboardDismissProps>
+export const KeyboardDismiss: ComponentType<KeyboardDismissProps>;

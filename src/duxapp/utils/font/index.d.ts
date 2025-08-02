@@ -8,16 +8,16 @@ export const font: {
    * @param name 字体名称
    * @param assets 字体资源路径
    */
-  loadLocal: (name: string, assets: string) => void
+  loadLocal: (name: string, assets: string) => void;
   /**
    * 加载远程字体
    * @param name 字体名称
    * @param url 字体地址
    */
-  load: (name: string, url: string) => void
+  load: (name: string, url: string) => void;
   /**
    * 判断远程字体加载状态，配合 load 方法使用
    * @param name 字体名称
    */
-  useFont: (name: string) => boolean
-}
+  useFont: (name: string) => boolean;
+};

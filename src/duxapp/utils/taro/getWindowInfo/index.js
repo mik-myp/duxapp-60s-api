@@ -1,5 +1,5 @@
-import { getSystemInfoSync } from '@tarojs/taro'
+import { getSystemInfoSync } from '@tarojs/taro';
 
 export const getWindowInfo = () => {
-  return getSystemInfoSync()
-}
+  return getSystemInfoSync();
+};

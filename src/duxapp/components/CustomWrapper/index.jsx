@@ -1,9 +1,9 @@
-import { createContext, useContext } from 'react'
+import { createContext, useContext } from 'react';
 
-const context = createContext({ id: null })
+const context = createContext({ id: null });
 
 export const CustomWrapper = ({ children }) => {
-  return children
-}
+  return children;
+};
 
-CustomWrapper.useContext = () => useContext(context)
+CustomWrapper.useContext = () => useContext(context);

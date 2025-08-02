@@ -1,9 +1,7 @@
-import dayjs from 'dayjs'
+import dayjs from 'dayjs';
 
-import zhcn from 'dayjs/locale/zh-cn'
+import zhcn from 'dayjs/locale/zh-cn';
 
-dayjs.locale('zh-cn', zhcn)
+dayjs.locale('zh-cn', zhcn);
 
-export {
-  dayjs
-}
+export { dayjs };

@@ -1,2 +1,2 @@
-export * from './route'
-export * from './nav'
+export * from './route';
+export * from './nav';

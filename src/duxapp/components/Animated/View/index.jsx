@@ -1,1 +1,1 @@
-export { View } from '@tarojs/components'
+export { View } from '@tarojs/components';

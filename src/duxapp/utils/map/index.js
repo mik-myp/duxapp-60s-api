@@ -1,2 +1,2 @@
-export * from './util'
-export { default as AppMap } from './map'
+export * from './util';
+export { default as AppMap } from './map';

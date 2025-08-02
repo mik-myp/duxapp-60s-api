@@ -1,49 +1,65 @@
-import { pxTransform, showToast } from '@tarojs/taro'
-import { Platform } from '@/duxapp/utils/rn/util'
-import { getDeviceInfo, getWindowInfo } from './taro'
+import { pxTransform, showToast } from '@tarojs/taro';
+import { Platform } from '@/duxapp/utils/rn/util';
+import { getDeviceInfo, getWindowInfo } from './taro';
 
-export const toast = msg => {
+export const toast = (msg) => {
   if (!msg) {
-    return
+    return;
   }
   showToast({
     title: typeof msg === 'object' ? JSON.stringify(msg) : msg,
     icon: 'none',
     duration: 3000
-  })
-}
+  });
+};
 
-let systemInfo
+let systemInfo;
 export const isIphoneX = () => {
-  systemInfo = systemInfo || getDeviceInfo()
+  systemInfo = systemInfo || getDeviceInfo();
   if (process.env.TARO_ENV === 'rn') {
-    return Platform.OS !== 'android' && systemInfo.safeArea?.bottom < systemInfo.screenHeight
+    return (
+      Platform.OS !== 'android' &&
+      systemInfo.safeArea?.bottom < systemInfo.screenHeight
+    );
   } else {
-    const phoneMarks = ['iPhone X', 'iPhone 11', 'iPhone 12', 'iPhone 13', 'iPhone 14', 'iPhone 15', 'iPhone 16', 'iPhone 17', 'iPhone 18']
-    const { model = '' } = systemInfo
+    const phoneMarks = [
+      'iPhone X',
+      'iPhone 11',
+      'iPhone 12',
+      'iPhone 13',
+      'iPhone 14',
+      'iPhone 15',
+      'iPhone 16',
+      'iPhone 17',
+      'iPhone 18'
+    ];
+    const { model = '' } = systemInfo;
     for (let i = 0, l = phoneMarks.length; i < l; i++) {
-      if ((model || '').startsWith(phoneMarks[i])) return true
+      if ((model || '').startsWith(phoneMarks[i])) return true;
     }
-    return false
+    return false;
   }
-}
+};
 
-export const asyncTimeOut = time => {
-  let resolveFunc
-  let rejectFunc
+export const asyncTimeOut = (time) => {
+  let resolveFunc;
+  let rejectFunc;
   const pro = new Promise((resolve, reject) => {
-    resolveFunc = resolve
-    rejectFunc = reject
-  })
-  const timer = setTimeout(() => resolveFunc({ code: 200, message: '倒计时结束', type: 'timeout' }), time)
+    resolveFunc = resolve;
+    rejectFunc = reject;
+  });
+  const timer = setTimeout(
+    () => resolveFunc({ code: 200, message: '倒计时结束', type: 'timeout' }),
+    time
+  );
   pro.clear = () => {
-    clearTimeout(timer)
-    rejectFunc({ code: 500, message: '清除倒计时' })
-  }
-  return pro
-}
+    clearTimeout(timer);
+    rejectFunc({ code: 500, message: '清除倒计时' });
+  };
+  return pro;
+};
 
-export const noop = () => { }
+export const noop = () => {};
 
 /**
  * 获取Platform类型，主要用于支付请求的时候获取不同的支付类型
@@ -52,47 +68,49 @@ export const noop = () => { }
 export const getPlatform = () => {
   switch (process.env.TARO_ENV) {
     case 'rn':
-      return 'app'
+      return 'app';
     case 'h5':
-      const ua = window.navigator.userAgent.toLowerCase()
+      const ua = window.navigator.userAgent.toLowerCase();
       if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-        return 'wechat'
+        return 'wechat';
       } else {
-        return 'wap'
+        return 'wap';
       }
     default:
-      return process.env.TARO_ENV
+      return process.env.TARO_ENV;
   }
-}
+};
 
-export const stopPropagation = e => {
-  e?.stopPropagation?.()
-}
+export const stopPropagation = (e) => {
+  e?.stopPropagation?.();
+};
 
 export const px = (val, pxUnit) => {
   if (process.env.TARO_ENV === 'rn') {
-    return pxTransform(val) + (pxUnit ? 'px' : 0)
+    return pxTransform(val) + (pxUnit ? 'px' : 0);
   } else {
-    return pxTransform(val)
+    return pxTransform(val);
   }
-}
+};
 
-export const pxNum = val => {
-  return val / 750 * getWindowInfo().windowWidth
-}
+export const pxNum = (val) => {
+  return (val / 750) * getWindowInfo().windowWidth;
+};
 
-export const transformStyle = obj => {
+export const transformStyle = (obj) => {
   if (process.env.TARO_ENV === 'rn') {
-    return Object.keys(obj).map(key => {
+    return Object.keys(obj).map((key) => {
       return {
         [key]: obj[key]
-      }
-    })
+      };
+    });
   }
-  return Object.keys(obj).map(key => `${key}(${obj[key]})`).join(' ')
-}
+  return Object.keys(obj)
+    .map((key) => `${key}(${obj[key]})`)
+    .join(' ');
+};
 
-export const isPlatformMini = process.env.TARO_PLATFORM === 'mini'
+export const isPlatformMini = process.env.TARO_PLATFORM === 'mini';
 
 /**
  * 增强版节流函数
@@ -102,45 +120,45 @@ export const isPlatformMini = process.env.TARO_PLATFORM === 'mini'
  * @return {Function} 节流后的函数
  */
 export const throttle = (fn, delay, immediate = true) => {
-  let lastExecTime = 0
-  let timer = null
-  let pendingArgs = null
-  let context = null
+  let lastExecTime = 0;
+  let timer = null;
+  let pendingArgs = null;
+  let context = null;
 
   const execute = () => {
-    lastExecTime = Date.now()
-    fn.apply(context, pendingArgs)
-    timer = null
-    pendingArgs = null
-    context = null
-  }
+    lastExecTime = Date.now();
+    fn.apply(context, pendingArgs);
+    timer = null;
+    pendingArgs = null;
+    context = null;
+  };
 
   return function (...args) {
-    const now = Date.now()
-    const elapsed = now - lastExecTime
+    const now = Date.now();
+    const elapsed = now - lastExecTime;
 
-    context = this
-    pendingArgs = args
+    context = this;
+    pendingArgs = args;
 
     // 清除之前的延迟执行
     if (timer) {
-      clearTimeout(timer)
-      timer = null
+      clearTimeout(timer);
+      timer = null;
     }
 
     // 如果是第一次调用且设置立即执行
     if (immediate && lastExecTime === 0) {
-      execute()
-      return
+      execute();
+      return;
     }
 
     // 如果距离上次执行已超过delay，立即执行
     if (elapsed > delay) {
-      execute()
+      execute();
     }
     // 否则设置延迟执行(保证最后一次调用会被执行)
     else {
-      timer = setTimeout(execute, delay - elapsed)
+      timer = setTimeout(execute, delay - elapsed);
     }
-  }
-}
+  };
+};

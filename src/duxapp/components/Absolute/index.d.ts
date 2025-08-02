@@ -1,12 +1,12 @@
-import { ComponentType, ReactElement } from 'react'
+import { ComponentType, ReactElement } from 'react';
 
 interface AbsoluteProps {
   /**
    * 分组 同一个分组的弹框将会以队列的形式显示
    */
-  group?: string
+  group?: string;
   /** 子元素 */
-  children: ReactElement
+  children: ReactElement;
 }
 
 /**
@@ -19,4 +19,4 @@ interface AbsoluteProps {
  * </Asbolute>
  * ```
  */
-export const Absolute: ComponentType<AbsoluteProps>
+export const Absolute: ComponentType<AbsoluteProps>;

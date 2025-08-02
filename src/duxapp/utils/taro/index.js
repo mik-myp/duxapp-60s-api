@@ -1,2 +1,2 @@
-export { getWindowInfo } from './getWindowInfo'
-export { getDeviceInfo } from './getDeviceInfo'
+export { getWindowInfo } from './getWindowInfo';
+export { getDeviceInfo } from './getDeviceInfo';

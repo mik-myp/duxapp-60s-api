@@ -1,1 +1,1 @@
-export * from './previewMedia'
+export * from './previewMedia';

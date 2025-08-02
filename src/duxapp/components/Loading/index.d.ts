@@ -1,18 +1,18 @@
-import { ComponentType } from 'react'
-import { ViewProps } from '@tarojs/components'
+import { ComponentType } from 'react';
+import { ViewProps } from '@tarojs/components';
 
 interface color {
   /** 深色 #7a7a7a */
-  dark
+  dark;
   /** 白色 #fff */
-  blank
+  blank;
 }
 
 interface LoadingProps extends ViewProps {
   /** loading颜色 */
-  color?: keyof color,
+  color?: keyof color;
   /** loading尺寸 */
-  size?: number
+  size?: number;
 }
 
 /**
@@ -20,4 +20,4 @@ interface LoadingProps extends ViewProps {
  * @example <Loading size={60} />
  * @info size不支持动态更改，只会渲染其初始值
  */
-export const Loading: ComponentType<LoadingProps>
+export const Loading: ComponentType<LoadingProps>;

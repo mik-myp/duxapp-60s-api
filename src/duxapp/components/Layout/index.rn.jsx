@@ -1,36 +1,38 @@
-import { useEffect, useRef, useState, forwardRef } from 'react'
-import { View as NativeView } from 'react-native'
-import { getWindowInfo } from '@/duxapp/utils'
-import ClickableSimplified from '@tarojs/components-rn/dist/components/ClickableSimplified'
+import { useEffect, useRef, useState, forwardRef } from 'react';
+import { View as NativeView } from 'react-native';
+import { getWindowInfo } from '@/duxapp/utils';
+import ClickableSimplified from '@tarojs/components-rn/dist/components/ClickableSimplified';
 
-const ClickView = ClickableSimplified(NativeView)
+const ClickView = ClickableSimplified(NativeView);
 
-const View = forwardRef(({
-  onClick,
-  ...props
-}, ref) => {
+const View = forwardRef(({ onClick, ...props }, ref) => {
   if (onClick) {
-    return <ClickView ref={ref} onClick={onClick} {...props} />
+    return <ClickView ref={ref} onClick={onClick} {...props} />;
   }
-  return <NativeView ref={ref} {...props} />
-})
+  return <NativeView ref={ref} {...props} />;
+});
 
-export const Layout = ({ children, onLayout, onClick, reloadKey, ...props }) => {
-
-  const viewRef = useRef(null)
+export const Layout = ({
+  children,
+  onLayout,
+  onClick,
+  reloadKey,
+  ...props
+}) => {
+  const viewRef = useRef(null);
 
   /** 记录layout的值 measure有奇怪的bug当使用循环时，只能取得第一个实体节点的数据 */
-  const layoutData = useRef({})
+  const layoutData = useRef({});
 
-  const onLayoutRef = useRef(onLayout)
-  onLayoutRef.current = onLayout
+  const onLayoutRef = useRef(onLayout);
+  onLayoutRef.current = onLayout;
 
-  const [layoutStatus, setLayoutStatus] = useState(false)
+  const [layoutStatus, setLayoutStatus] = useState(false);
 
   useEffect(() => {
     if (viewRef.current && layoutStatus) {
       viewRef.current.measure((x, y, width, height, left, top) => {
-        const { windowWidth } = getWindowInfo()
+        const { windowWidth } = getWindowInfo();
         onLayoutRef.current?.({
           width: width || layoutData.current.width,
           height: height || layoutData.current.height,
@@ -43,21 +45,23 @@ export const Layout = ({ children, onLayout, onClick, reloadKey, ...props }) => 
            */
           left: left > windowWidth ? left - windowWidth : left,
           top
-        })
-      })
+        });
+      });
     }
-  }, [reloadKey, layoutStatus])
+  }, [reloadKey, layoutStatus]);
 
-  return <View
-    {...props}
-    onLayout={e => {
-      layoutData.current = e.nativeEvent.layout
-      setLayoutStatus(true)
-    }}
-    ref={viewRef}
-    activeOpacity={1}
-    {...onClick ? { onClick } : {}}
-  >
-    {children}
-  </View>
-}
+  return (
+    <View
+      {...props}
+      onLayout={(e) => {
+        layoutData.current = e.nativeEvent.layout;
+        setLayoutStatus(true);
+      }}
+      ref={viewRef}
+      activeOpacity={1}
+      {...(onClick ? { onClick } : {})}
+    >
+      {children}
+    </View>
+  );
+};

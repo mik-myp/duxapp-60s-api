@@ -1,5 +1,5 @@
-import { ComponentType } from 'react'
-import { ViewProps } from '@tarojs/components'
+import { ComponentType } from 'react';
+import { ViewProps } from '@tarojs/components';
 
 interface LayoutProps extends ViewProps {
   /**
@@ -10,14 +10,14 @@ interface LayoutProps extends ViewProps {
   /** 在布局发生变化时的回调函数 */
   onLayout?: (layout: {
     /** 宽度 */
-    width: number
+    width: number;
     /** 高度 */
-    height: number
+    height: number;
     /** 距离屏幕左侧的位置 */
-    left: number
+    left: number;
     /** 距离屏幕顶部的位置 */
-    top: number
-  }) => void
+    top: number;
+  }) => void;
 }
 
 /**
@@ -25,4 +25,4 @@ interface LayoutProps extends ViewProps {
  * @param props 组件属性
  * @returns JSX.Element
  */
-export const Layout: ComponentType<LayoutProps>
+export const Layout: ComponentType<LayoutProps>;

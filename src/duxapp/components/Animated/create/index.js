@@ -1,3 +1,3 @@
-import { createAnimation } from '@tarojs/taro'
+import { createAnimation } from '@tarojs/taro';
 
-export const create = createAnimation
+export const create = createAnimation;

@@ -1,1 +1,1 @@
-export { getDeviceInfo } from '@tarojs/taro'
+export { getDeviceInfo } from '@tarojs/taro';

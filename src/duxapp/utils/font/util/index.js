@@ -1,4 +1,4 @@
-import { loadFontFace } from '@tarojs/taro'
+import { loadFontFace } from '@tarojs/taro';
 
 export const loadFont = (name, url) => {
   return loadFontFace({
@@ -6,9 +6,7 @@ export const loadFont = (name, url) => {
     family: name,
     source: `url("${url}")`,
     scopes: ['webview', 'native']
-  })
-}
+  });
+};
 
-export const loadLocalFont = () => {
-
-}
+export const loadLocalFont = () => {};

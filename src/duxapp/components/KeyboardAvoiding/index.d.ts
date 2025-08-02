@@ -1,10 +1,10 @@
-import { ComponentType } from 'react'
+import { ComponentType } from 'react';
 
 interface KeyboardAvoidingProps {
   /**
    * 是否开启功能
    */
-  enabled?: boolean
+  enabled?: boolean;
 }
 
 /**
@@ -15,4 +15,4 @@ interface KeyboardAvoidingProps {
  *  <Input />
  * </KeyboardAvoiding>
  */
-export const KeyboardAvoiding: ComponentType<KeyboardAvoidingProps>
+export const KeyboardAvoiding: ComponentType<KeyboardAvoidingProps>;

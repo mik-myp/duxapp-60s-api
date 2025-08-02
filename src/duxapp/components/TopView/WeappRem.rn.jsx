@@ -1,1 +1,1 @@
-export const WeappRem = () => null
+export const WeappRem = () => null;

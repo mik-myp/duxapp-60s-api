@@ -1,1 +1,1 @@
-export { getWindowInfo } from '@tarojs/taro'
+export { getWindowInfo } from '@tarojs/taro';

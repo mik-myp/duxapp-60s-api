@@ -1,4 +1,4 @@
-import { defineConfig } from '@tarojs/cli'
+import { defineConfig } from '@tarojs/cli';
 
 export default defineConfig({
   h5: {
@@ -9,9 +9,9 @@ export default defineConfig({
       }
     },
     webpackChain(chain) {
-      chain.plugin('fastRefreshPlugin').tap(args => {
-        return [...args, { overlay: false }]
-      })
+      chain.plugin('fastRefreshPlugin').tap((args) => {
+        return [...args, { overlay: false }];
+      });
     }
   }
-})
+});

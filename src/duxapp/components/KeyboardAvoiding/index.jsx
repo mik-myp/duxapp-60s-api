@@ -1,3 +1,3 @@
-export const KeyboardAvoiding = props => {
-  return props.children
-}
+export const KeyboardAvoiding = (props) => {
+  return props.children;
+};

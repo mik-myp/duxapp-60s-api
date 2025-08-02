@@ -1,17 +1,16 @@
-import { ScrollViewProps } from '@tarojs/components'
-import { ScrollViewHorizontalProps } from './Horizontal'
-import { ComponentType } from 'react'
+import { ScrollViewProps } from '@tarojs/components';
+import { ScrollViewHorizontalProps } from './Horizontal';
+import { ComponentType } from 'react';
 
 interface DuxScrollViewProps extends ScrollViewProps {
-
   /** 下拉刷新状态 设置为true显示加载中 false不显示加载中 */
-  refresh?: boolean
+  refresh?: boolean;
 
   /** 是否处于下拉刷新状态 */
-  onRefresh?: () => any
+  onRefresh?: () => any;
 
   /** 180翻转内容 */
-  flip?: boolean
+  flip?: boolean;
 }
 
 /**
@@ -21,5 +20,5 @@ interface DuxScrollViewProps extends ScrollViewProps {
  */
 
 export const ScrollView: ComponentType<DuxScrollViewProps> & {
-  Horizontal: ComponentType<ScrollViewHorizontalProps>
-}
+  Horizontal: ComponentType<ScrollViewHorizontalProps>;
+};

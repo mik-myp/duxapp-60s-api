@@ -1,12 +1,13 @@
-const capitalizeFirstLetter = str => {
+const capitalizeFirstLetter = (str) => {
   if (typeof str !== 'string') {
-    return ''
+    return '';
   }
-  return str.charAt(0).toUpperCase() + str.slice(1)
-}
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
 
 const scssData = {
-  '': [`// ---- 基础模块主题配置 ----
+  '': [
+    `// ---- 基础模块主题配置 ----
 
 // 基础样式
 $duxappPrimaryColor: #337ab7;
@@ -38,38 +39,43 @@ $duxappTextSize6: 34px;
 $duxappTextSize7: 36px;
 
 $duxappRadius: 16px;
-`],
-  header: [`
+`
+  ],
+  header: [
+    `
 // Header组件
 $duxappHeaderColor: #fff;
-$duxappHeaderTextColor: #000;`]
-}
+$duxappHeaderTextColor: #000;`
+  ]
+};
 
-export default theme => {
-  Object.keys(theme).forEach(key => {
-    const value = theme[key]
+export default (theme) => {
+  Object.keys(theme).forEach((key) => {
+    const value = theme[key];
     if (typeof value !== 'object') {
-      scssData[''].push(`$duxapp${capitalizeFirstLetter(key)}: ${typeof value === 'number'
-        ? `${value}px`
-        : value
+      scssData[''].push(
+        `$duxapp${capitalizeFirstLetter(key)}: ${
+          typeof value === 'number' ? `${value}px` : value
         };`
-      )
+      );
     } else {
       switch (key) {
         case 'header': {
           if (value.color) {
-            scssData.header.push(`$duxappHeaderColor: ${value.color};`)
+            scssData.header.push(`$duxappHeaderColor: ${value.color};`);
           }
           if (value.textColor) {
-            scssData.header.push(`$duxappHeaderTextColor: ${value.textColor};`)
+            scssData.header.push(`$duxappHeaderTextColor: ${value.textColor};`);
           }
-          break
+          break;
         }
       }
     }
-  })
-  return Object.keys(scssData).map(key => {
-    scssData[key].splice(1, 0, '\n// 用户样式')
-    return scssData[key].join('\n')
-  }).join('\n')
-}
+  });
+  return Object.keys(scssData)
+    .map((key) => {
+      scssData[key].splice(1, 0, '\n// 用户样式');
+      return scssData[key].join('\n');
+    })
+    .join('\n');
+};

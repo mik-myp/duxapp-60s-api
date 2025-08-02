@@ -1,0 +1,26 @@
+# 忽略node_modules目录
+node_modules/
+
+# 忽略dist目录
+/dist/
+
+# 忽略配置文件
+/config/
+/configs/
+
+# 忽略.gitignore
+.gitignore
+
+# 忽略README.md
+Readme.md
+
+# 忽略package.json和package-lock.json
+package.json
+package-lock.json
+package.back.json
+
+# 忽略编辑器配置文件
+.editorconfig
+.eslintrc
+.babel.config.js
+jsconfig.json

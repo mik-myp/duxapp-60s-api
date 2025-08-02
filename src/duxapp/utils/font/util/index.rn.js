@@ -1,7 +1,7 @@
-import { loadAsync } from 'expo-font'
+import { loadAsync } from 'expo-font';
 
 export const loadFont = async (name, url) => {
-  return await loadAsync(name, url)
-}
+  return await loadAsync(name, url);
+};
 
-export const loadLocalFont = loadFont
+export const loadLocalFont = loadFont;

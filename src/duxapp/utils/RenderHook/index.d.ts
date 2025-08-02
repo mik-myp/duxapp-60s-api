@@ -11,25 +11,31 @@ export class RenderHook {
    */
   Render: (props: {
     /** 钩子唯一标识 */
-    mark: string
+    mark: string;
     /** 传递给插入此钩子的组件的参数 */
     option?: {
-      [any]: any
-    }
+      [any]: any;
+    };
     /** 最多允许显示多少个插入的钩子 */
-    max?: number
-    children?: JSX.Element
-  }) => JSX.Element
+    max?: number;
+    children?: JSX.Element;
+  }) => JSX.Element;
 
   /**
    * hook获取添加的钩子
    */
-  useMark: (mark: string, type?: 'self' | 'before' | 'after' | 'container' = 'self') => any[]
+  useMark: (
+    mark: string,
+    type?: 'self' | 'before' | 'after' | 'container' = 'self'
+  ) => any[];
 
   /**
    * 获取添加的钩子
    */
-  getMark: (mark: string, type?: 'self' | 'before' | 'after' | 'container' = 'self') => any[]
+  getMark: (
+    mark: string,
+    type?: 'self' | 'before' | 'after' | 'container' = 'self'
+  ) => any[];
 
   /**
    * 添加一个或多个钩子
@@ -42,15 +48,15 @@ export class RenderHook {
    * })
    * payHook.add('mark', <Text>内容</Text>)
    */
-  add: (mark: string, ...element: any[]) => void
+  add: (mark: string, ...element: any[]) => void;
   /**
    * 添加一个或多个钩子 此方法添加的元素将显示在钩子的前面
    */
-  addBefore: (mark: string, ...element: any[]) => void
+  addBefore: (mark: string, ...element: any[]) => void;
   /**
    * 添加一个或多个钩子 此方法添加的元素将显示在钩子的后面
    */
-  addAfter: (mark: string, ...element: any[]) => void
+  addAfter: (mark: string, ...element: any[]) => void;
   /**
    * 添加一个或多个容器钩子
    * 这些容器是一个组件，可以套在此标记的外层，并控制这个标记的子元素
@@ -59,7 +65,7 @@ export class RenderHook {
    *  return <View>{children}</View>
    * })
    */
-  addContainer: (mark: string, ...element: any[]) => void
+  addContainer: (mark: string, ...element: any[]) => void;
 }
 
-export const duxappHook: RenderHook
+export const duxappHook: RenderHook;
