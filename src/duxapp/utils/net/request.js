@@ -4,7 +4,7 @@ import { getUrl, execGetObject, execGetChild, execMiddle } from './util';
 import { asyncTimeOut, toast } from '../util';
 import { deepCopy } from '../object';
 
-const bodyType = ['POST', 'PUT', 'DELETE'];
+const bodyType = ['POST', 'PUT', 'DELETE', 'PATCH'];
 
 const requestReact = async ({ url, data, header, timeout, ...option } = {}) => {
   if (bodyType.includes(option.method)) {

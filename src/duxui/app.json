@@ -1,0 +1,6 @@
+{
+  "name": "duxui",
+  "description": "DUXUI库",
+  "version": "1.1.26",
+  "dependencies": ["duxappStyle", "react-native-view-shot"]
+}
