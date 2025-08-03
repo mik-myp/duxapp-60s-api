@@ -1,0 +1,8 @@
+{
+  "name": "toolbox",
+  "description": "工具箱项目文件夹",
+  "version": "1.0.0",
+  "dependencies": [
+    "duxui"
+  ]
+}

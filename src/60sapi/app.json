@@ -1,6 +1,0 @@
-{
-  "name": "60sapi",
-  "description": "60s的api",
-  "version": "1.0.0",
-  "dependencies": ["duxapp", "duxui"]
-}

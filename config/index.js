@@ -1,10 +1,10 @@
-import { defineConfig } from '@tarojs/cli'
-import { taroPlugin } from 'duxapp-cli/cjs/plugins/index'
-import path from 'path'
-import { getAlias, getAppConfig } from './utils'
+import { defineConfig } from '@tarojs/cli';
+import { taroPlugin } from 'duxapp-cli/cjs/plugins/index';
+import path from 'path';
+import { getAlias, getAppConfig } from './utils';
 
-import devConfig from './dev'
-import prodConfig from './prod'
+import devConfig from './dev';
+import prodConfig from './prod';
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig(async (merge, ...args) => {
@@ -20,16 +20,11 @@ export default defineConfig(async (merge, ...args) => {
     },
     sourceRoot: 'src',
     outputRoot: `dist/${process.env.TARO_ENV}`,
-    plugins: [
-      ...taroPlugin()
-    ],
-    defineConstants: {
-    },
+    plugins: [...taroPlugin()],
+    defineConstants: {},
     copy: {
-      patterns: [
-      ],
-      options: {
-      }
+      patterns: [],
+      options: {}
     },
     framework: 'react',
     compiler: {
@@ -45,17 +40,15 @@ export default defineConfig(async (merge, ...args) => {
     cache: {
       enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
       buildDependencies: {
-        config: [path.resolve(__dirname, '..', 'src/theme.scss')],
-      },
+        config: [path.resolve(__dirname, '..', 'src/theme.scss')]
+      }
     },
     alias: getAlias(),
     mini: {
       postcss: {
         pxtransform: {
           enable: true,
-          config: {
-
-          }
+          config: {}
         },
         cssModules: {
           enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -68,7 +61,7 @@ export default defineConfig(async (merge, ...args) => {
       miniCssExtractPluginOption: {
         //忽略css文件引入顺序
         ignoreOrder: true
-      },
+      }
     },
     h5: {
       publicPath: '/',
@@ -76,8 +69,7 @@ export default defineConfig(async (merge, ...args) => {
       postcss: {
         autoprefixer: {
           enable: true,
-          config: {
-          }
+          config: {}
         },
         cssModules: {
           enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -94,20 +86,29 @@ export default defineConfig(async (merge, ...args) => {
       miniCssExtractPluginOption: {
         filename: 'css/[name].[hash:8].css',
         chunkFilename: 'css/[id].[chunkhash:8].css'
-      },
+      }
     },
     rn: {
       appName: 'duxapp',
       postcss: {
         cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+          enable: false // 默认为 false，如需使用 css modules 功能，则设为 true
         }
       }
     }
-  }
+  };
   if (process.env.NODE_ENV === 'development') {
-    return merge({}, baseConfig, devConfig, ...(await getAppConfig('dev', merge, ...args)))
+    return merge(
+      {},
+      baseConfig,
+      devConfig,
+      ...(await getAppConfig('dev', merge, ...args))
+    );
   }
-  return merge({}, baseConfig, prodConfig, ...(await getAppConfig('prod', merge, ...args)))
-})
-
+  return merge(
+    {},
+    baseConfig,
+    prodConfig,
+    ...(await getAppConfig('prod', merge, ...args))
+  );
+});
