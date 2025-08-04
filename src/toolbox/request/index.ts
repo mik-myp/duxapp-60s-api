@@ -21,7 +21,11 @@ const config = {
   middle: { before: [], result: [], error: [] }
 };
 
-import { createRequest, createUpload } from '@/duxapp/utils';
+import {
+  createRequest,
+  createUpload,
+  createRequestHooks
+} from '@/duxapp/utils';
 
 const {
   request,
@@ -29,6 +33,7 @@ const {
   middle: requestMiddle
 } = createRequest(config);
 const { upload, uploadTempFile, middle: uploadMiddle } = createUpload(config);
+const { useRequest, usePageData } = createRequestHooks(request);
 
 export {
   request,
@@ -36,5 +41,7 @@ export {
   requestMiddle,
   upload,
   uploadTempFile,
-  uploadMiddle
+  uploadMiddle,
+  useRequest,
+  usePageData
 };

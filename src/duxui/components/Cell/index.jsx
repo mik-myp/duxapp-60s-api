@@ -67,26 +67,26 @@ export const Cell = ({
 }) => {
   return (
     <Root radius={radius} isLink={isLink} {...props}>
-      <View className={`Cell__left${subTitle ? ' Cell__left--col' : ''}`}>
+      <View className={`Cell__left${subTitle ? ' Cell__left--col' : ''}`} style={{ flexShrink: 1, minWidth: 0 }}>
         {!!renderIcon && !subTitle && (
           <View className='Cell__icon'>{renderIcon}</View>
         )}
         {React.isValidElement(title) ? (
           title
         ) : (
-          <Text className='Cell__title'>{title}</Text>
+          <Text className='Cell__title' style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{title}</Text>
         )}
         {!!subTitle &&
           (React.isValidElement(subTitle) ? (
             subTitle
           ) : (
-            <Text className='Cell__subtitle'>{subTitle}</Text>
+            <Text className='Cell__subtitle' style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{subTitle}</Text>
           ))}
       </View>
       {React.isValidElement(desc) ? (
         desc
       ) : (
-        <View className='Cell__right'>
+        <View className='Cell__right' style={{ flexShrink: 0 }}>
           <Text className='Cell__desc'>{desc}</Text>
         </View>
       )}

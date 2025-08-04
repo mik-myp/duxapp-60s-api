@@ -5,16 +5,17 @@ interface TopViewProps {
    * 是否显示安全区域
    * @default false
    */
-  isSafe: boolean;
+  isSafe?: boolean;
   /**
    * 是否是表单页面
    * @default false
    */
-  isForm: boolean;
+  isForm?: boolean;
   /** 顶层样式 */
-  style: CSSProperties;
+  style?: CSSProperties;
   /** 样式类名 */
-  className: string;
+  className?: string;
+  children?: React.ReactNode;
 }
 
 /**

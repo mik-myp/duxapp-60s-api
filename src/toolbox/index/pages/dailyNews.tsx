@@ -1,5 +1,5 @@
 import { Header, TopView } from '@/duxui';
-import { Menus, type MenuItem } from '../../components/Menus';
+import { Menus, type MenuItem } from '@/toolbox/components/Memus';
 import { useState } from 'react';
 
 export const DailyNews = () => {

@@ -68,6 +68,7 @@ interface DividerGruopProps {
     | 'custom1'
     | 'custom2'
     | 'custom3';
+  children?: React.ReactNode;
 }
 
 export const Divider: React.FC<DividerProps>;

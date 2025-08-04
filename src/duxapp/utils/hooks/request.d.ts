@@ -138,7 +138,7 @@ declare namespace RequestHooks {
   }
 }
 
-export function createRequestHooks(request: () => Promist<any>): {
+export function createRequestHooks(request: (option: string | RequestOption) => Promise<any>): {
   /**
    * request请求封装成hook
    * @param option 请求函数的参数
@@ -147,7 +147,7 @@ export function createRequestHooks(request: () => Promist<any>): {
    */
   useRequest: (
     option: Request.RequestOption,
-    config: RequestHooks.RequestConfig
+    config?: RequestHooks.RequestConfig
   ) => [any, RequestHooks.RequestResult];
 
   usePageData: (

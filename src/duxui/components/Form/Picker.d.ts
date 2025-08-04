@@ -16,6 +16,7 @@ interface PickerValueProps {
 declare const PickerValue: React.FC<PickerValueProps>;
 
 interface PickerSelectProps {
+  grow?: boolean;
   /**
    * 弹出选择器的标题
    */

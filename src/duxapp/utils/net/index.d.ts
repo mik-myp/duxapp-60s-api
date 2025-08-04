@@ -82,7 +82,7 @@ interface RequestConfig {
   };
 }
 
-declare namespace Request {
+export declare namespace Request {
   interface method {
     /** GET请求 */
     GET;

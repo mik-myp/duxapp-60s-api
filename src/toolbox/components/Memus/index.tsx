@@ -1,4 +1,6 @@
-import { Grid, Column, ScrollView, Text, route } from '@/duxui';
+import { ToolBoxIcon, Grid, Column, ScrollView, Text, route } from '@/duxui';
+import { View } from '@tarojs/components';
+import './index.scss';
 
 export type MenuItem = {
   name: string;
@@ -12,17 +14,20 @@ interface MenusProps {
 export const Menus = (props: MenusProps) => {
   const { menus } = props;
   return (
-    <ScrollView className='m-2'>
-      <Grid square column={3} gap={20}>
+    <ScrollView className='scroll-view'>
+      <Grid column={2} gap={16} className='m-2'>
         {menus.map((item) => {
           return (
             <Column
               key={item.url}
-              className='bg-primary flex items-center justify-center'
+              className='bg-white flex items-center justify-center menuItem'
               onClick={() => {
                 route.nav(item.url);
               }}
             >
+              <View className='menuItem__icon flex items-center justify-center'>
+                <ToolBoxIcon name='wenjian' />
+              </View>
               <Text>{item.name}</Text>
             </Column>
           );
@@ -31,3 +36,5 @@ export const Menus = (props: MenusProps) => {
     </ScrollView>
   );
 };
+
+export default Menus;
