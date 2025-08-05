@@ -91,7 +91,10 @@ export default function CurrentCurrencyExchangeRate() {
           {data.rates?.map((item) => {
             if (!currencyMap[item.currency]) return null;
             return (
-              <View className='flex-row justify-between align-center bg-white m-3 p-3 r-3'>
+              <View
+                className='flex-row justify-between align-center bg-white m-3 p-3 r-3'
+                key={item.currency}
+              >
                 <Text>{`${currencyMap[item.currency]}（${
                   item.currency
                 }）`}</Text>

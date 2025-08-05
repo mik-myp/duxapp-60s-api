@@ -74,6 +74,7 @@ export default function HistoryToday() {
                   subTitle={item.description}
                   desc={item.event_type}
                   onClick={() => route.nav(item.link)}
+                  key={item.title}
                 />
               );
             })}

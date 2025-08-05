@@ -22,6 +22,17 @@ export default {
         CurrentCurrencyExchangeRate: {},
         HistoryToday: {}
       }
+    },
+    'toolbox/popularRankings': {
+      alias: (name) => name,
+      pages: {
+        Bilibili: {},
+        Cateye: {},
+        Headlines: {},
+        Tiktok: {},
+        Weibo: {},
+        Zhihu: {}
+      }
     }
   }
 };

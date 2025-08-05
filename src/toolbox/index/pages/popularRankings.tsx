@@ -5,20 +5,29 @@ import { useState } from 'react';
 export const PopularRankings = () => {
   const [menus, setMenus] = useState<MenuItem[]>([
     {
-      name: '每天 60 秒读懂世界',
-      url: 'UnderstandTheWorldIn60SecondsEveryDay'
+      name: '哔哩哔哩热搜榜',
+      url: 'Bilibili'
     },
     {
-      name: '必应每日壁纸（Bing）',
-      url: 'BingDailyWallpaper'
+      name: '猫眼票房排行榜',
+      url: 'Cateye'
     },
     {
-      name: '当日货币汇率',
-      url: 'CurrentCurrencyExchangeRate'
+      name: '微博热搜榜',
+      url: 'Weibo'
+    },
+
+    {
+      name: '知乎热门话题',
+      url: 'Zhihu'
     },
     {
-      name: '历史上的今天',
-      url: 'HistoryToday'
+      name: '抖音热搜榜',
+      url: 'Tiktok'
+    },
+    {
+      name: '头条热搜榜',
+      url: 'Headlines'
     }
   ]);
 
