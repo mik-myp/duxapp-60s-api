@@ -31,7 +31,6 @@ export default function Weibo() {
   const [data, action]: [Datum[], RequestHooks.RequestResult] = useRequest({
     url: 'weibo'
   });
-  console.log('🌍 ~ Weibo ~ data:', data);
   return (
     <TopView>
       <Header title='微博热搜榜' titleCenter />

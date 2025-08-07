@@ -56,7 +56,6 @@ export default function Tiktok() {
   const [data, action]: [Datum[], RequestHooks.RequestResult] = useRequest({
     url: 'douyin'
   });
-  console.log('🌍 ~ Tiktok ~ data:', data);
 
   // 数字转万
   const numToWan = (num: number) => {

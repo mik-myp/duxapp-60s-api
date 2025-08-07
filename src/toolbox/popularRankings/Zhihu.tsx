@@ -64,7 +64,6 @@ export default function Zhihu() {
   const [data, action]: [Datum[], RequestHooks.RequestResult] = useRequest({
     url: 'zhihu'
   });
-  console.log('🌍 ~ Zhihu ~ data:', data);
 
   return (
     <TopView>

@@ -77,7 +77,6 @@ export default function EpicGamesFreeGame() {
   const [data, action]: [Datum[], RequestHooks.RequestResult] = useRequest({
     url: 'epic'
   });
-  console.log('🌍 ~ EpicGamesFreeGame ~ data:', data);
 
   return (
     <TopView>

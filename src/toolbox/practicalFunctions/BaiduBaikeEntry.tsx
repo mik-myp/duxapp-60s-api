@@ -65,7 +65,6 @@ export default function BaiduBaikeEntry() {
       }
     }
   );
-  console.log('🌍 ~ BaiduBaikeEntry ~ data:', data);
 
   return (
     <TopView>

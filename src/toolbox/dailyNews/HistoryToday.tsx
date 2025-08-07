@@ -57,7 +57,6 @@ export default function HistoryToday() {
   const [data, action]: [Data, RequestHooks.RequestResult] = useRequest({
     url: 'today_in_history'
   });
-  console.log('🌍 ~ HistoryToday ~ data:', data);
 
   return (
     <TopView>

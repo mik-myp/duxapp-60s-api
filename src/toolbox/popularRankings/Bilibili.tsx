@@ -27,7 +27,6 @@ export default function Bilibili() {
   const [data, action]: [Datum[], RequestHooks.RequestResult] = useRequest({
     url: 'bili'
   });
-  console.log('🌍 ~ Bilibili ~ data:', data);
 
   return (
     <TopView>

@@ -36,7 +36,6 @@ export default function Cateye() {
   const [data, action]: [Data, RequestHooks.RequestResult] = useRequest({
     url: 'maoyan'
   });
-  console.log('🌍 ~ Cateye ~ data:', data);
 
   return (
     <TopView>
