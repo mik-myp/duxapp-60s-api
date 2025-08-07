@@ -33,6 +33,17 @@ export default {
         Weibo: {},
         Zhihu: {}
       }
+    },
+    'toolbox/practicalFunctions': {
+      alias: (name) => name,
+      pages: {
+        EpicGamesFreeGame: {},
+        BaiduBaikeEntry: {},
+        OnlineTranslation: {},
+        PublicIPAddress: {},
+        LinkOGInformation: {},
+        HashUnzipZip: {}
+      }
     }
   }
 };

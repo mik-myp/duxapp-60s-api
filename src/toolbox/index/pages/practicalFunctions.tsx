@@ -5,20 +5,28 @@ import { useState } from 'react';
 export const PracticalFunctions = () => {
   const [menus, setMenus] = useState<MenuItem[]>([
     {
-      name: '每天 60 秒读懂世界',
-      url: 'UnderstandTheWorldIn60SecondsEveryDay'
+      name: 'Epic Games 免费游戏',
+      url: 'EpicGamesFreeGame'
     },
     {
-      name: '必应每日壁纸（Bing）',
-      url: 'BingDailyWallpaper'
+      name: '百度百科词条',
+      url: 'BaiduBaikeEntry'
     },
     {
-      name: '当日货币汇率',
-      url: 'CurrentCurrencyExchangeRate'
+      name: '在线翻译',
+      url: 'OnlineTranslation'
     },
     {
-      name: '历史上的今天',
-      url: 'HistoryToday'
+      name: '公网 IP 地址',
+      url: 'PublicIPAddress'
+    },
+    {
+      name: '链接 OG 信息',
+      url: 'LinkOGInformation'
+    },
+    {
+      name: '哈希/解压/压缩',
+      url: 'HashUnzipZip'
     }
   ]);
 
