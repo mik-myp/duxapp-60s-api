@@ -1,6 +1,24 @@
 import { ComponentType, CSSProperties } from 'react';
 
 interface names {
+  xinlangweibo;
+  lianjie;
+  ip;
+  zhihu;
+  suiji;
+  fanyi;
+  lishi;
+  yinpin;
+  miao;
+  jiema;
+  epicgames;
+  biying;
+  newspaper;
+  purse;
+  douyin;
+  baidubaike;
+  maoyan;
+  bilibili;
   wangyou;
   wenjian;
   zhexiantu;

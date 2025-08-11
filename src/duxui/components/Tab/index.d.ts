@@ -59,6 +59,7 @@ interface TabItemProps {
   value?: string | number;
   /** 显示红点组件的属性 */
   badgeProps?: BadgeProps;
+  children?: ReactNode;
 }
 
 export const Tab: React.FC<TabProps>;

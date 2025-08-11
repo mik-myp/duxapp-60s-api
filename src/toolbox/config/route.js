@@ -44,6 +44,13 @@ export default {
         LinkOGInformation: {},
         HashUnzipZip: {}
       }
+    },
+    'toolbox/recreation': {
+      alias: (name) => name,
+      pages: {
+        StochasticMusic: {},
+        Stochastics: {}
+      }
     }
   }
 };

@@ -1,0 +1,16 @@
+/* 歌曲信息区域 */
+.song-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 翻唱人信息区域 */
+.singer-info {
+  margin-left: 24px;
+  flex: 1;
+}
+
+.lyrics-line {
+  margin: 12px 0;
+  padding: 8px 0;
+}

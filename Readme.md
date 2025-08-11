@@ -19,6 +19,8 @@ yarn dev weapp --app=duxapp
 yarn duxapp app add duxui
 # 调试小程序端 打包duxui模块
 yarn dev weapp --app=duxui
+# 添加iconfont图标
+yarn duxapp icon create ToolBoxIcon duxui xxx.css(iconfont图标css地址)
 ```
 
 ## 开发文档

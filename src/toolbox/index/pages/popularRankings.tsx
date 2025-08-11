@@ -6,28 +6,34 @@ export const PopularRankings = () => {
   const [menus, setMenus] = useState<MenuItem[]>([
     {
       name: '哔哩哔哩热搜榜',
-      url: 'Bilibili'
+      url: 'Bilibili',
+      icon: 'bilibili'
     },
     {
       name: '猫眼票房排行榜',
-      url: 'Cateye'
+      url: 'Cateye',
+      icon: 'maoyan'
     },
     {
       name: '微博热搜榜',
-      url: 'Weibo'
+      url: 'Weibo',
+      icon: 'xinlangweibo'
     },
 
     {
       name: '知乎热门话题',
-      url: 'Zhihu'
+      url: 'Zhihu',
+      icon: 'zhihu'
     },
     {
       name: '抖音热搜榜',
-      url: 'Tiktok'
+      url: 'Tiktok',
+      icon: 'douyin'
     },
     {
       name: '头条热搜榜',
-      url: 'Headlines'
+      url: 'Headlines',
+      icon: 'newspaper'
     }
   ]);
 

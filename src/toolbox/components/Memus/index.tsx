@@ -1,10 +1,12 @@
 import { ToolBoxIcon, Grid, Column, ScrollView, Text, route } from '@/duxui';
 import { View } from '@tarojs/components';
 import './index.scss';
+import type { names } from '@/duxui/components/ToolBoxIcon';
 
 export type MenuItem = {
   name: string;
   url: string;
+  icon?: keyof names;
 };
 
 interface MenusProps {
@@ -26,7 +28,7 @@ export const Menus = (props: MenusProps) => {
               }}
             >
               <View className='menuItem__icon flex items-center justify-center'>
-                <ToolBoxIcon name='wenjian' />
+                {item.icon && <ToolBoxIcon name={item.icon} />}
               </View>
               <Text>{item.name}</Text>
             </Column>

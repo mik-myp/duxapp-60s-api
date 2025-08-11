@@ -6,19 +6,23 @@ export const DailyNews = () => {
   const [menus, setMenus] = useState<MenuItem[]>([
     {
       name: '每天 60 秒读懂世界',
-      url: 'UnderstandTheWorldIn60SecondsEveryDay'
+      url: 'UnderstandTheWorldIn60SecondsEveryDay',
+      icon: 'miao'
     },
     {
       name: '必应每日壁纸（Bing）',
-      url: 'BingDailyWallpaper'
+      url: 'BingDailyWallpaper',
+      icon: 'biying'
     },
     {
       name: '当日货币汇率',
-      url: 'CurrentCurrencyExchangeRate'
+      url: 'CurrentCurrencyExchangeRate',
+      icon: 'purse'
     },
     {
       name: '历史上的今天',
-      url: 'HistoryToday'
+      url: 'HistoryToday',
+      icon: 'lishi'
     }
   ]);
 
