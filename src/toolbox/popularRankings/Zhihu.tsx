@@ -108,7 +108,13 @@ export default function Zhihu() {
                       </Space>
                     </Space>
                     <Divider type='dashed' />
-                    <Space row justify='start' className='mt-2'>
+                    <Space
+                      row
+                      justify='start'
+                      style={{
+                        marginTop: px(16)
+                      }}
+                    >
                       <Text size={1} color={2}>
                         {item.hot_value_desc}
                       </Text>

@@ -101,7 +101,7 @@ export default function UnderstandTheWorldIn60SecondsEveryDay() {
               height: px(250),
               backgroundColor: '#fd4545'
             }}
-            className='flex items-center justify-center gap-1'
+            className='items-center justify-center gap-1'
           >
             <Text color='#fff' size={3}>
               {getDayOfWeek(data.date || '')}
@@ -113,14 +113,13 @@ export default function UnderstandTheWorldIn60SecondsEveryDay() {
               总有人间一两风，填我十万八千梦
             </Text>
           </View>
-          <Text
-            color='#c77c77'
-            className='mv-2 flex items-center justify-center'
-          >
-            NEWS
-          </Text>
+          <View className='items-center justify-center'>
+            <Text color='#c77c77' className='mv-2'>
+              NEWS
+            </Text>
+          </View>
           <Divider type='solid' size={10} style={{ borderColor: '#707070' }} />
-          <View className='m-2 flex items-center justify-between flex-row'>
+          <View className='m-2 items-center justify-between flex-row'>
             <View style={{ width: '20%' }} className='text-left'>
               <Text>{data.lunar_date}</Text>
             </View>
@@ -135,7 +134,7 @@ export default function UnderstandTheWorldIn60SecondsEveryDay() {
           <View className='mv-2'>
             {data.news?.map((item, index) => {
               return (
-                <Text key={index} className='mb-3'>
+                <Text key={index} style={{ marginBottom: px(24) }}>
                   {`${index + 1}、${item}`}
                 </Text>
               );

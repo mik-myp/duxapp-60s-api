@@ -85,7 +85,7 @@ export default function EpicGamesFreeGame() {
         {action.loading ? (
           <Loading />
         ) : (
-          <View className='flex gap-2'>
+          <View className='gap-2'>
             {data.map((item) => {
               return (
                 <Card

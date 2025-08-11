@@ -4,7 +4,7 @@ import { Loading as DuxLoading } from '@/duxapp';
 export default function Loading() {
   return (
     <View
-      className='flex items-center justify-center'
+      className='items-center justify-center'
       style={{ height: '100%' }}
     >
       <DuxLoading />

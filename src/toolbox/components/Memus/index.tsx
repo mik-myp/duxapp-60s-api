@@ -22,12 +22,12 @@ export const Menus = (props: MenusProps) => {
           return (
             <Column
               key={item.url}
-              className='bg-white flex items-center justify-center menuItem'
+              className='bg-white items-center justify-center menuItem'
               onClick={() => {
                 route.nav(item.url);
               }}
             >
-              <View className='menuItem__icon flex items-center justify-center'>
+              <View className='menuItem__icon items-center justify-center'>
                 {item.icon && <ToolBoxIcon name={item.icon} />}
               </View>
               <Text>{item.name}</Text>

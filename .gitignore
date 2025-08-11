@@ -11,7 +11,7 @@ node_modules/
 # duxapp
 /src/app.config.js
 /src/app.js
-# /src/app.scss
+/src/app.scss
 /src/index.html
 /src/theme.scss
 /src/duxapp/config/userConfig.js

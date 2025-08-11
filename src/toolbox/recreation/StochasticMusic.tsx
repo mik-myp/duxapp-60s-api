@@ -6,7 +6,8 @@ import {
   Header,
   ScrollView,
   RequestHooks,
-  Avatar
+  Avatar,
+  px
 } from '@/duxui';
 import Loading from '../components/Loading';
 import { useRequest } from '../request';
@@ -98,9 +99,13 @@ const StochasticMusic = () => {
           ) : (
             <>
               {/* 歌曲信息区域 */}
-              <View className='song-info r-2 p-3 mb-3 text-center'>
+              <View
+                className='song-info r-2 p-3 text-center'
+                style={{ marginBottom: px(24) }}
+              >
                 <Text
-                  className='mb-2 text-center'
+                  className='text-center'
+                  style={{ marginBottom: px(16) }}
                   bold
                   color={'#fff'}
                   size={32}
@@ -113,11 +118,14 @@ const StochasticMusic = () => {
                 </Text>
               </View>
               {/* 翻唱人信息区域 */}
-              <View className='flex items-center p-3 bg-white r-2 mb-3'>
+              <View
+                className='items-center p-3 bg-white r-2'
+                style={{ marginBottom: px(24) }}
+              >
                 <Avatar src={data.user.avatar_url} size='l' />
                 <View className='singer-info'>
-                  <View className='flex flex-row items-center'>
-                    <Text className='mr-2' size={32} bold>
+                  <View className='flex-row items-center'>
+                    <Text style={{ marginRight: px(16) }} size={32} bold>
                       {data.user.nickname}
                     </Text>
                     {data.user.gender === 'male' ? (
@@ -133,10 +141,17 @@ const StochasticMusic = () => {
                 </View>
               </View>
               {/* 歌词区域 */}
-              <View className=' p-3 bg-white r-2 mb-3'>
-                <View className='flex flex-row justify-center items-center mb-3 '>
+              <View
+                className=' p-3 bg-white r-2'
+                style={{ marginBottom: px(24) }}
+              >
+                <View
+                  className='flex-row justify-center items-center'
+                  style={{ marginBottom: px(24) }}
+                >
                   <Text
-                    className='text-center mr-2'
+                    className='text-center '
+                    style={{ marginRight: px(16) }}
                     size={32}
                     bold
                     color={'#333'}
